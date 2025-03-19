@@ -14,6 +14,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
+
     <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,15 +27,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
 
     <!-- Version Control -->
-    <script src="version.js" defer></script>
-    <link rel="stylesheet" href="style/style.css?v=APP_VERSION">
-    <script src="data/allarmi.js?v=APP_VERSION" defer></script>
-    <script src="data/appartamenti_cerrano.js?v=APP_VERSION" defer></script>
-    <script src="data/appartamenti_welcome.js?v=APP_VERSION" defer></script>
-    <script src="data/appartamenti_lorenza.js?v=APP_VERSION" defer></script>
-    <script src="data/appartamenti.js?v=APP_VERSION" defer></script>
-    <script src="data/uffici.js?v=APP_VERSION" defer></script>
-    <script src="data/dipendenti.js?v=APP_VERSION" defer></script>
+    <script src="version.js"></script>
+    <script>
+        document.write(`
+            <link rel="stylesheet" href="/style/info.css?v=${APP_VERSION}">
+            <script src="data/allarmi.js?v=${APP_VERSION}"><\/script>
+            <script src="data/appartamenti_cerrano.js?v=${APP_VERSION}"><\/script>
+            <script src="data/appartamenti_welcome.js?v=${APP_VERSION}"><\/script>
+            <script src="data/appartamenti_lorenza.js?v=${APP_VERSION}"><\/script>
+            <script src="data/appartamenti.js?v=${APP_VERSION}"><\/script>
+            <script src="data/uffici.js?v=${APP_VERSION}"><\/script>
+            <script src="data/dipendenti.js?v=${APP_VERSION}"><\/script>
+        `);
+    </script>
 </head>
 <title>Info Generali</title>
 
@@ -48,7 +53,7 @@
                 <nav class="d-grid gap-3 button-container">
                     <a href="/calendario.html" class="btn btn-custom-2 btn-lg text-white btn-custom ripple">Appartamenti
                         e B&B</a>
-                    <!--<a href="/Calendario/index.html"
+                     <!--<a href="/Calendario/index.html"
                         class="btn btn-lg btn-custom-8 text-white btn-custom ripple">Calendario</a>-->
                     <a href="composizioneLetti.html"
                         class="btn btn-custom-3 btn-lg text-white btn-custom ripple">COMPOSIZIONE LETTI</a>
@@ -64,78 +69,85 @@
                     <a href="/WebApp/oredipendenti.html"
                         class="btn btn-custom-6 btn-lg text-white btn-custom ripple">ORE DIPENDENTI</a>
                     <a id="pswAr" href="areaRiservata.html" class="btn btn-custom-4 btn-lg text-white btn-custom ripple">Area Riservata</a>
-                    <div class="text-center"></div>
+                    <div class="text-center">
+                    </div>
                 </nav>
             </div>
         </main>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script type="module">
-        import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js';
 
-        document.getElementById('pswAr').addEventListener('click', function(event) {
-            event.preventDefault();
-            
+    <script>
+
+document.getElementById('pswAr').addEventListener('click', function(event) {
+    event.preventDefault();
+    
+    Swal.fire({
+        title: 'Area Riservata',
+        input: 'password',
+        inputPlaceholder: 'Inserisci la password',
+        showCancelButton: true,
+        confirmButtonText: 'Accedi',
+        cancelButtonText: 'Annulla',
+        customClass: {
+            popup: 'glass-effect',
+            title: 'neon-text',
+            confirmButton: 'btn btn-custom-4 btn-lg text-white btn-custom ripple',
+            cancelButton: 'btn btn-custom-3 btn-lg text-white btn-custom ripple',
+            container: 'container'
+        },
+        background: 'var(--bg-color)',
+        color: 'var(--text-color)',
+        buttonsStyling: false,
+        backdrop: `
+            rgba(26, 26, 46, 0.8)
+            left top
+            no-repeat
+        `
+    }).then((result) => {
+        let password = result.value;
+        
+        if (password === null || password === '') {
             Swal.fire({
-                title: 'Area Riservata',
-                input: 'password',
-                inputPlaceholder: 'Inserisci la password',
-                showCancelButton: true,
-                confirmButtonText: 'Accedi',
-                cancelButtonText: 'Annulla',
+                icon: 'error',
+                title: 'Password errata!',
                 customClass: {
                     popup: 'glass-effect',
-                    title: 'neon-text',
-                    confirmButton: 'btn btn-custom-4 btn-lg text-white btn-custom ripple',
-                    cancelButton: 'btn btn-custom-3 btn-lg text-white btn-custom ripple',
-                    container: 'container'
+                    confirmButton: 'btn btn-custom-3 btn-lg text-white btn-custom ripple'
                 },
-                background: 'var(--bg-color)',
-                color: 'var(--text-color)',
                 buttonsStyling: false,
-                backdrop: `
-                    rgba(26, 26, 46, 0.8)
-                    left top
-                    no-repeat
-                `
-            }).then((result) => {
-                let password = result.value;
-                
-                if (password === null || password === '') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Password errata!',
-                        customClass: {
-                            popup: 'glass-effect',
-                            confirmButton: 'btn btn-custom-3 btn-lg text-white btn-custom ripple'
-                        },
-                        buttonsStyling: false,
-                        background: 'var(--bg-color)',
-                        color: 'var(--text-color)'
-                    });
-                    return;
-                }
-                
-                if (masterPassword.includes(password)) {
-                    window.location.href = 'areaRiservata.html';
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Password errata!',
-                        customClass: {
-                            popup: 'glass-effect',
-                            confirmButton: 'btn btn-custom-3 btn-lg text-white btn-custom ripple'
-                        },
-                        buttonsStyling: false,
-                        background: 'var(--bg-color)',
-                        color: 'var(--text-color)'
-                    });
-                }
+                background: 'var(--bg-color)',
+                color: 'var(--text-color)'
             });
-        });
+            return;
+        }
+        
+        if (masterPassword.includes(password)) {
+            window.location.href = 'areaRiservata.html';
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Password errata!',
+                customClass: {
+                    popup: 'glass-effect',
+                    confirmButton: 'btn btn-custom-3 btn-lg text-white btn-custom ripple'
+                },
+                buttonsStyling: false,
+                background: 'var(--bg-color)',
+                color: 'var(--text-color)'
+            });
+        }
+    });
+});
+
+
     </script>
+
+
+
+
 </body>
 
 </html>
