@@ -1,4 +1,4 @@
-const APP_VERSION = '1.16.0';
+const APP_VERSION = '1.0.0';
 const VERSION_KEY = 'appVersion';
 
 function logVersionCheck(storedVersion) {

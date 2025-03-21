@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#495057">
+    <meta name="description" content="Info">
+    <meta name="author" content="Fabio Malvaldi">
+    
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+          integrity="sha384-..." crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+
+    <!-- Version Control -->
+    <script src="version.js"></script>
+    <script>
+        document.write(`
+            <link rel="stylesheet" href="style/style.css?v=${APP_VERSION}">
+            <script src="data/psw.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/dipendenti.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/appartamenti.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/bnb.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/uffici.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/cerrano.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/welcome.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/lorenza.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/allarmi.js?v=${APP_VERSION}" ><\/script> 
+        `);
+    </script>
+</head>
+
+<body class="bg-dark">
+    <div class="container py-4">
+        <header class="text-center mb-5 animate__animated animate__fadeIn">
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                <h1 class="gradient-text display-4">Info Generali</h1>
+            </div>
+            <nav>
+                <a href="/sito_info.html" class="btn btn-custom-4 btn-lg text-white btn-custom ripple">
+                    <span class="btn-content">Torna indietro</span>
+                </a>
+            </nav>
+        </header>
+
+        <main class="row g-4 justify-content-between">
+            <!-- Sezione principale B&B -->
+            <div class="col-lg-7">
+                <section class="alarm-container glass-effect p-4 rounded h-100">
+                    <h3 class="text-center mb-4 neon-text">Composizione letti B&B</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="alarm-list">
+                                <h5 class="text-white-50 mb-3">Stratificazione letti:</h5>
+                                <ul class="list-unstyled">
+                                    <li class="alarm-item hidden mb-2">2 Lenzuolo</li>
+                                    <li class="alarm-item hidden">Lenzuolo (Con Piumone)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="alarm-list">
+                                <h5 class="text-white-50 mb-3">Biancheria bagno:</h5>
+                                <ul class="list-unstyled">
+                                    <li class="alarm-subitem hidden">Asciugamano corpo</li>
+                                    <li class="alarm-subitem hidden">Asciugamano Bidet</li>
+                                    <li class="alarm-subitem hidden">Asciugamano viso</li>
+                                    <li class="alarm-subitem hidden">Scendibagno</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <h5 class="neon-text mb-3">Cuscini per letto</h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item alarm-subitem hidden">2x Cuscino</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sezioni stagionali -->
+            <div class="col-lg-5">
+                <div class="row g-4 h-100">
+                    <div class="col-12">
+                        <section class="alarm-container glass-effect p-4 rounded">
+                            <h3 class="text-center mb-4 neon-text">Letti inverno</h3>
+                            <ul class="alarm-list list-unstyled text-center">
+                                <li class="alarm-item hidden">Lenzuolo</li>
+                                <li class="alarm-item hidden">Lenzuolo</li>
+                                <li class="alarm-item hidden">Piumone</li>
+                                <li class="alarm-item hidden">Lenzuolo</li>
+                            </ul>
+                        </section>
+                    </div>
+                    
+                    <div class="col-12">
+                        <section class="alarm-container glass-effect p-4 rounded">
+                            <h3 class="text-center mb-4 neon-text">Letti estate</h3>
+                            <ul class="alarm-list list-unstyled text-center">
+                                <li class="alarm-item hidden">3 Lenzuola</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-5">
+            <a href="/sito_info.html" class="btn btn-custom-4 btn-lg text-white btn-custom ripple">
+                <span class="btn-content">Torna indietro</span>
+            </a>
+        </footer>
+    </div>
+</body>
+</html>

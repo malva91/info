@@ -471,6 +471,19 @@ input::placeholder {
     color: var(--text-color);
   }
 
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bg-dark-soft {
+    background-color: #343a40;
+}
+
+.list-group-item.bg-transparent {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
   .feedback-summary {
     margin-bottom: 20px;
     background: #34495e;
@@ -530,7 +543,6 @@ input::placeholder {
     height: 80vh;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    backdrop-filter: blur(5px);
   }
 
   .ratio-16x9 iframe {

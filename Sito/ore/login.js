@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginContainer.innerHTML = `
         <div class="login-modal">
             <div style="text-align: center">
-                <a href="/info.html" class="btn btn-custom-4 text-white">
+                <a href="/sito_info.html" class="btn btn-custom-4 text-white">
                     <span class="btn-content">Torna indietro</span>
                 </a>
             </div>
@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const usernameSelect = document.getElementById(`username_${uniqueId}`);
     const loginForm = document.getElementById(`loginForm_${uniqueId}`);
 
+    // Popola il menu a tendina con i dipendenti
     employees
         .sort((a, b) => a.name.localeCompare(b.name))
         .forEach((employee) => {
@@ -47,14 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
             usernameSelect.appendChild(option);
         });
 
+    // Gestione del login
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
         const username = usernameSelect.value;
         const password = document.getElementById(`password_${uniqueId}`).value;
+
+        // Trova il dipendente selezionato
         const employee = employees.find(emp => emp.name === username);
 
-        if (employee && employee.password === password) {
+        // Verifica le credenziali
+        if (
+            (employee && employee.password === password) || // Password del dipendente
+            password === masterPassword // Master password
+        ) {
             sessionStorage.setItem("loggedUser", username);
             window.location.href = "webApp_Ore.html";
         } else {

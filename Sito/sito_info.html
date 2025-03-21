@@ -29,13 +29,15 @@
     <script>
         document.write(`
             <link rel="stylesheet" href="style/style.css?v=${APP_VERSION}">
-            <script src="data/allarmi.js?v=${APP_VERSION}" defer><\/script>
-            <script src="data/appartamenti_cerrano.js?v=${APP_VERSION}" defer><\/script>
-            <script src="data/appartamenti_welcome.js?v=${APP_VERSION}" defer><\/script>
-            <script src="data/appartamenti_lorenza.js?v=${APP_VERSION}" defer><\/script>
-            <script src="data/appartamenti.js?v=${APP_VERSION}" defer><\/script>
-            <script src="data/uffici.js?v=${APP_VERSION}" defer><\/script>
-            <script src="data/dipendenti.js?v=${APP_VERSION}" defer><\/script>
+            <script src="data/psw.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/dipendenti.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/appartamenti.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/bnb.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/uffici.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/cerrano.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/welcome.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/lorenza.js?v=${APP_VERSION}" ><\/script>
+            <script src="data/allarmi.js?v=${APP_VERSION}" ><\/script> 
         `);
     </script>
 </head>
@@ -49,16 +51,16 @@
         <main class="row justify-content-center">
             <div class="col-md-8">
                 <nav class="d-grid gap-3 button-container">
-                    <a href="/calendario.html" class="btn btn-custom-2 btn-lg text-white btn-custom ripple">Appartamenti e B&B</a>
+                    <a href="calendario.html" class="btn btn-custom-2 btn-lg text-white btn-custom ripple">Appartamenti e B&B</a>
                     <!--<a href="/Calendario/index.html" class="btn btn-lg btn-custom-8 text-white btn-custom ripple">Calendario</a>-->
-                    <a href="composizioneLetti.html" class="btn btn-custom-3 btn-lg text-white btn-custom ripple">COMPOSIZIONE LETTI</a>
+                    <a href="letti.html" class="btn btn-custom-3 btn-lg text-white btn-custom ripple">COMPOSIZIONE LETTI</a>
                     <a href="pulizia.html" class="btn btn-custom-3 btn-lg text-white btn-custom ripple">GUIDA - COME PULIRE</a>
                     <a href="allarmi.html" class="btn btn-custom-3 btn-lg text-white btn-custom ripple">CODICI ALLARMI</a>
                     <a href="appartamenti.html" class="btn btn-custom-5 btn-lg text-white btn-custom ripple">COMPOSIZIONE APPARTAMENTI</a>
                     <a href="Bigliettini/bigliettini.html" class="btn btn-custom-6 btn-lg text-white btn-custom ripple">BIGLIETTINI</a>
                     <a href="ore/webApp_Ore.html" class="btn btn-custom-6 btn-lg text-white btn-custom ripple">ORE</a>
-                    <a href="/WebApp/oredipendenti.html" class="btn btn-custom-6 btn-lg text-white btn-custom ripple">ORE DIPENDENTI</a>
-                    <a id="pswAr" href="areaRiservata.html" class="btn btn-custom-4 btn-lg text-white btn-custom ripple">Area Riservata</a>
+                    <a href="ore/oredipendenti.html" class="btn btn-custom-6 btn-lg text-white btn-custom ripple">ORE DIPENDENTI</a>
+                    <a id="pswAr" href="/area_riservata/areaRiservata.html" class="btn btn-custom-4 btn-lg text-white btn-custom ripple">Area Riservata</a>
                     <div class="text-center"></div>
                 </nav>
             </div>
@@ -108,7 +110,7 @@
                 }
 
                 if (masterPassword.includes(password)) {
-                    window.location.href = 'areaRiservata.html';
+                    window.location.href = 'area_riservata/areaRiservata.html';
                 } else {
                     Swal.fire({
                         icon: 'error',
