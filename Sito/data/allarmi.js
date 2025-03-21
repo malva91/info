@@ -1,4 +1,4 @@
-const alarmData = {
+ const alarmData = {
     general: [
         { name: "Codice KeyBox HR", code: "0224" },
         { name: "Aforisma", code: "OFF:3623* ON:*1" },

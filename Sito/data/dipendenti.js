@@ -1,6 +1,4 @@
-const masterPassword = "Adminhr"; // Master password
-
-const employees = [
+ const employees = [
   {
     name: "**Dipendente Test**",
     password: "Test",

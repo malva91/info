@@ -1,4 +1,4 @@
-const appartamenti = [
+ const appartamenti = [
     "LE_MURA|60",
     "ORTENSIE|150",
     "INBETWEEN|60",
