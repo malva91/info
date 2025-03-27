@@ -62,6 +62,7 @@
     "LIPPERT|180",
     "FEDELI|75",
     "CIMED|90",
-    "ESSENZE D'ARREDO|60"
+    "ESSENZE D'ARREDO|60",
+    "GINNASIA|100"
   
   ];

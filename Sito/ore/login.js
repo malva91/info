@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginContainer.innerHTML = `
         <div class="login-modal">
             <div style="text-align: center">
-                <a href="/sito_info.html" class="btn btn-custom-4 text-white">
+                <a href="sito_info.html" class="btn btn-custom-4 text-white">
                     <span class="btn-content">Torna indietro</span>
                 </a>
             </div>
